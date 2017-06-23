@@ -326,7 +326,7 @@ Printer.prototype.watch = function () {
 
 	var lpq = spawn('lpq', args);
 	self.lpq = lpq;
-
+if (lpq){
 	lpq.stdout.on('data', function (data) {
 		data = parseStdout(data);
 		data.shift();
@@ -355,9 +355,13 @@ Printer.prototype.watch = function () {
 		});
 	});
 
+
 	lpq.on('exit', function () {
 		self.watch();
 	});
+  } else {
+    consol.log('********************** Spawn Printer Error *************************');
+}
 };
 
 Printer.prototype.findJob = function (jobId) {
