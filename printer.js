@@ -292,7 +292,7 @@ function Printer(name) {
 	}
 	self.name = name;
 	self.jobs = [];
-	self.watch();
+	//self.watch();
 }
 
 Printer.list = function () {
@@ -357,10 +357,10 @@ if (lpq){
 
 
 	lpq.on('exit', function () {
-		self.watch();
+		//self.watch();
 	});
   } else {
-    consol.log('********************** Spawn Printer Error *************************');
+    console.log('********************** Spawn Printer Error *************************');
 }
 };
 
