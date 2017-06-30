@@ -292,7 +292,7 @@ function Printer(name) {
 	}
 	self.name = name;
 	self.jobs = [];
-	//self.watch();
+	self.watch();
 }
 
 Printer.list = function () {
